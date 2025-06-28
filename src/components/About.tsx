@@ -1,22 +1,16 @@
-
 import { useEffect, useState } from "react";
-
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  return (
-    <section id="about" className="py-32 bg-slate-800/30 relative overflow-hidden">
+  return <section id="about" className="py-32 bg-slate-800/30 relative overflow-hidden">
       {/* Parallax Background */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{ transform: `translateY(${scrollY * 0.2}px)` }}
-      >
+      <div className="absolute inset-0 opacity-10" style={{
+      transform: `translateY(${scrollY * 0.2}px)`
+    }}>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10"></div>
       </div>
 
@@ -43,11 +37,9 @@ const About = () => {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
-                  {["Problem Solver", "Innovation Driver", "Security Focused", "Team Leader"].map((trait) => (
-                    <span key={trait} className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 px-4 py-2 rounded-full text-sm border border-cyan-500/30 hover:bg-cyan-500/30 transition-all duration-300">
+                  {["Problem Solver", "Innovation Driver", "Security Focused", "Team Leader"].map(trait => <span key={trait} className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 px-4 py-2 rounded-full text-sm border border-cyan-500/30 hover:bg-cyan-500/30 transition-all duration-300">
                       {trait}
-                    </span>
-                  ))}
+                    </span>)}
                 </div>
               </div>
             </div>
@@ -64,7 +56,7 @@ const About = () => {
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
                     <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-600/50 hover:border-cyan-500/50 transition-all duration-300">
                       <h4 className="text-xl font-semibold text-white mb-2">B.E. Computer Science & Engineering</h4>
-                      <p className="text-cyan-400 font-medium mb-2">Information Security Specialization</p>
+                      <p className="font-medium mb-2 text-cyan-500">(HONS.) IBM - INFORMATION SECURITY</p>
                       <p className="text-gray-400">Chandigarh University • 2025</p>
                     </div>
                   </div>
@@ -73,7 +65,7 @@ const About = () => {
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
                     <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-600/50 hover:border-cyan-500/50 transition-all duration-300">
                       <h4 className="text-xl font-semibold text-white mb-2">DevOps Engineering Program</h4>
-                      <p className="text-blue-400 font-medium mb-2">Advanced Infrastructure & Automation</p>
+                      <p className="font-medium mb-2 text-blue-400">Advanced Infrastructure & Automation</p>
                       <p className="text-gray-400">Scaler Academy • 2025</p>
                     </div>
                   </div>
@@ -89,8 +81,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
