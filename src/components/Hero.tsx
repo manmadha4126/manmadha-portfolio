@@ -58,34 +58,37 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10 max-w-6xl">
-        {/* Enhanced Profile Section */}
-        <div className="mb-12 animate-fade-in">
-          <div className="relative group">
-            <div className="w-56 h-56 mx-auto rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-700 cursor-pointer">
-              <div className="w-full h-full rounded-full bg-slate-800/90 backdrop-blur-sm flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-slate-800/90 group-hover:to-slate-700/90 transition-all duration-700">
-                <div className="text-6xl font-bold text-white group-hover:scale-110 transition-transform duration-500">MM</div>
+        {/* Profile and Name Section - Side by Side Layout */}
+        <div className="flex items-center justify-center mb-12 animate-fade-in">
+          {/* Enhanced Profile Section - Left Side */}
+          <div className="mr-12 animate-fade-in">
+            <div className="relative group">
+              <div className="w-72 h-72 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-700 cursor-pointer">
+                <div className="w-full h-full rounded-full bg-slate-800/90 backdrop-blur-sm flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-slate-800/90 group-hover:to-slate-700/90 transition-all duration-700">
+                  <div className="text-8xl font-bold text-white group-hover:scale-110 transition-transform duration-500">MM</div>
+                </div>
+              </div>
+              {/* Floating Icons */}
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-0">
+                <div className="w-6 h-6 bg-white rounded-full animate-ping"></div>
               </div>
             </div>
-            {/* Floating Icons */}
-            <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-0">
-              <div className="w-6 h-6 bg-white rounded-full animate-ping"></div>
-            </div>
           </div>
-        </div>
 
-        {/* Enhanced Typography */}
-        <div className="space-y-6 mb-12">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight animate-fade-in">
-            <span className="block mb-4">Hi, I'm</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-pulse relative">
-              Manmadharao
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-500/20 blur-xl -z-10"></div>
-            </span>
-          </h1>
-          
-          <div className="text-2xl md:text-4xl lg:text-5xl text-gray-300 font-light animate-fade-in overflow-hidden">
-            <div className="inline-block animate-pulse bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
-              DevOps Engineer • Security Analyst • Web Developer
+          {/* Enhanced Typography - Right Side */}
+          <div className="text-left">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight animate-fade-in">
+              <span className="block mb-4">Hi, I'm</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-pulse relative">
+                Manmadharao
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-500/20 blur-xl -z-10"></div>
+              </span>
+            </h1>
+            
+            <div className="text-2xl md:text-4xl lg:text-5xl text-gray-300 font-light animate-fade-in overflow-hidden mt-6">
+              <div className="inline-block animate-pulse bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
+                DevOps Engineer • Security Analyst • Web Developer
+              </div>
             </div>
           </div>
         </div>
