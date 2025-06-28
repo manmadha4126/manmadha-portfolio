@@ -56,8 +56,8 @@ const About = () => {
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
                     <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-600/50 hover:border-cyan-500/50 transition-all duration-300">
                       <h4 className="text-xl font-semibold text-white mb-2">B.E. Computer Science & Engineering</h4>
-                      <p className="font-medium mb-2 text-cyan-500">(HONS.) IBM - INFORMATION SECURITY</p>
-                      <p className="text-gray-400">Chandigarh University • 2025</p>
+                      <p className="font-medium mb-2 text-cyan-500">(HONS.) IBM - Information Security Specialization</p>
+                      <p className="text-gray-400 text-lg font-semibold">Chandigarh University • 2021 - 2025</p>
                     </div>
                   </div>
                   
@@ -66,7 +66,7 @@ const About = () => {
                     <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-600/50 hover:border-cyan-500/50 transition-all duration-300">
                       <h4 className="text-xl font-semibold text-white mb-2">DevOps Engineering Program</h4>
                       <p className="font-medium mb-2 text-blue-400">Advanced Infrastructure & Automation</p>
-                      <p className="text-gray-400">Scaler Academy • 2025</p>
+                      <p className="text-gray-400 text-lg font-semibold">Scaler Academy 2024 - 2025</p>
                     </div>
                   </div>
                 </div>
