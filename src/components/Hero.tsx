@@ -25,7 +25,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Enhanced Parallax Background with Mouse Movement */}
       <div 
         className="absolute inset-0 opacity-30"

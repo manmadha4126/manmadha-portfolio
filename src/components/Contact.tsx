@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -106,15 +107,18 @@ const Contact = () => {
               <h4 className="text-xl font-semibold text-white mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 {[
-                  { name: "LinkedIn", icon: "💼" },
-                  { name: "Instagram", icon: "📷" },
-                  { name: "Facebook", icon: "📘" },
-                  { name: "Twitter", icon: "🐦" }
-                ].map((social) => (
-                  <div key={social.name} className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
-                    <span className="text-xl group-hover:scale-110 transition-transform duration-300">{social.icon}</span>
-                  </div>
-                ))}
+                  { name: "LinkedIn", icon: Linkedin },
+                  { name: "Instagram", icon: Instagram },
+                  { name: "Facebook", icon: Facebook },
+                  { name: "Twitter", icon: Twitter }
+                ].map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <div key={social.name} className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
+                      <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
