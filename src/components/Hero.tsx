@@ -64,8 +64,12 @@ const Hero = () => {
           <div className="mr-12 animate-fade-in">
             <div className="relative group">
               <div className="w-72 h-72 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-700 cursor-pointer">
-                <div className="w-full h-full rounded-full bg-slate-800/90 backdrop-blur-sm flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-slate-800/90 group-hover:to-slate-700/90 transition-all duration-700">
-                  <div className="text-8xl font-bold text-white group-hover:scale-110 transition-transform duration-500">MM</div>
+                <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm group-hover:bg-gradient-to-r group-hover:from-slate-800/90 group-hover:to-slate-700/90 transition-all duration-700">
+                  <img 
+                    src="https://i.postimg.cc/nrHWfDSs/Profile.jpg" 
+                    alt="Manmadharao Menda" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
               </div>
               {/* Floating Icons */}
