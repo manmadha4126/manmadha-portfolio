@@ -25,7 +25,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32">
       {/* Enhanced Parallax Background with Mouse Movement */}
       <div 
         className="absolute inset-0 opacity-30"
@@ -66,7 +66,7 @@ const Hero = () => {
               <div className="w-72 h-72 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-700 cursor-pointer">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm group-hover:bg-gradient-to-r group-hover:from-slate-800/90 group-hover:to-slate-700/90 transition-all duration-700">
                   <img 
-                    src="https://i.postimg.cc/nrHWfDSs/Profile.jpg" 
+                    src="https://i.postimg.cc/QdYPRmTv/Pwe.jpg" 
                     alt="Manmadharao Menda" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
