@@ -92,11 +92,11 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex space-x-4">
                   {socialLinks.map(social => {
-                    const IconComponent = social.icon;
-                    return <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
+                  const IconComponent = social.icon;
+                  return <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
                         <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
                       </a>;
-                  })}
+                })}
                 </div>
                 
                 {/* Profile Circle */}
