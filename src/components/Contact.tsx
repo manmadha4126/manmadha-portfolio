@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 const Contact = () => {
@@ -103,7 +101,7 @@ const Contact = () => {
                 
                 {/* Profile Circle */}
                 <div className="flex justify-start">
-                  <div className="w-23 h-23 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer">
+                  <div className="w-21 h-21 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer">
                     <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm">
                       <img src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" alt="Manmadharao Menda Profile" className="w-full h-full hover:scale-110 transition-transform duration-300 object-cover" />
                     </div>
@@ -124,4 +122,3 @@ const Contact = () => {
     </section>;
 };
 export default Contact;
-
