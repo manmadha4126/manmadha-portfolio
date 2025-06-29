@@ -22,6 +22,13 @@ const Contact = () => {
     });
   };
 
+  const socialLinks = [
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/manmadha-menda-1b3950244" },
+    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/manmadha_21/" },
+    { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/manmadhadithya.menda" },
+    { name: "Twitter", icon: Twitter, url: "https://x.com/manmadha_21" }
+  ];
+
   return (
     <section id="contact" className="py-20 bg-slate-800/50">
       <div className="container mx-auto px-6">
@@ -106,19 +113,33 @@ const Contact = () => {
             <div>
               <h4 className="text-xl font-semibold text-white mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
-                {[
-                  { name: "LinkedIn", icon: Linkedin },
-                  { name: "Instagram", icon: Instagram },
-                  { name: "Facebook", icon: Facebook },
-                  { name: "Twitter", icon: Twitter }
-                ].map((social) => {
+                {socialLinks.map((social) => {
                   const IconComponent = social.icon;
                   return (
-                    <div key={social.name} className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group"
+                    >
                       <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
-                    </div>
+                    </a>
                   );
                 })}
+              </div>
+              
+              {/* Profile Circle */}
+              <div className="mt-8 flex justify-center">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm">
+                    <img 
+                      src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" 
+                      alt="Manmadharao Menda Profile" 
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
