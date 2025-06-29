@@ -89,22 +89,20 @@ const Contact = () => {
             
             <div>
               <h4 className="text-xl font-semibold text-white mb-4">Connect With Me</h4>
-              <div className="space-y-4">
-                <div className="flex space-x-4">
-                  {socialLinks.map(social => {
-                  const IconComponent = social.icon;
-                  return <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
-                        <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
-                      </a>;
-                })}
-                </div>
-                
-                {/* Profile Circle */}
-                <div className="flex justify-start">
-                  <div className="w-21 h-21 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm">
-                      <img src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" alt="Manmadharao Menda Profile" className="w-full h-full hover:scale-110 transition-transform duration-300 object-cover" />
-                    </div>
+              <div className="flex space-x-4">
+                {socialLinks.map(social => {
+                const IconComponent = social.icon;
+                return <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
+                      <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                    </a>;
+              })}
+              </div>
+              
+              {/* Profile Circle */}
+              <div className="mt-8 flex justify-center">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm">
+                    <img src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" alt="Manmadharao Menda Profile" className="w-full h-full hover:scale-110 transition-transform duration-300 object-cover" />
                   </div>
                 </div>
               </div>
