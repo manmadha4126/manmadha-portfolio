@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
+  const [showProfileName, setShowProfileName] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
@@ -34,7 +37,8 @@ const Contact = () => {
     icon: Twitter,
     url: "https://x.com/manmadha_21"
   }];
-  return <section id="contact" className="py-20 bg-slate-800/50">
+  return (
+    <section id="contact" className="py-20 bg-slate-800/50">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-white text-center mb-16">
           Get In <span className="text-cyan-400">Touch</span>
@@ -100,10 +104,23 @@ const Contact = () => {
               
               {/* Profile Circle */}
               <div className="mt-8 flex justify-center">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer">
+                <div 
+                  className="relative w-20 h-20 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer"
+                  onMouseEnter={() => setShowProfileName(true)}
+                  onMouseLeave={() => setShowProfileName(false)}
+                >
                   <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm">
-                    <img src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" alt="Manmadharao Menda Profile" className="w-full h-full hover:scale-110 transition-transform duration-300 object-cover" />
+                    <img 
+                      src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" 
+                      alt="Manmadharao Menda Profile" 
+                      className="w-full h-full hover:scale-110 transition-transform duration-300 object-cover" 
+                    />
                   </div>
+                  {showProfileName && (
+                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-slate-800/90 text-cyan-400 px-3 py-1 rounded-lg text-sm font-medium border border-cyan-500/50 whitespace-nowrap">
+                      Manmadha
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -117,6 +134,8 @@ const Contact = () => {
           © 2024 Manmadharao Menda. All rights reserved.
         </p>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;

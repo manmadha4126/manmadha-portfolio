@@ -10,6 +10,11 @@ const Projects = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleViewDetails = () => {
+    // Open the PDF file
+    window.open("file:///C:/Users/menda/Downloads/publishing%20research%20paper/IJNRD2311374.pdf", "_blank");
+  };
+
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
       {/* Parallax Background */}
@@ -78,7 +83,10 @@ const Projects = () => {
               </div>
 
               <div className="mt-8 flex justify-center space-x-4">
-                <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/30">
+                <button 
+                  onClick={handleViewDetails}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/30"
+                >
                   View Details
                 </button>
                 <button className="border-2 border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-full hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105">
