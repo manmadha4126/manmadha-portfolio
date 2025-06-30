@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 const Projects = () => {
@@ -11,22 +12,9 @@ const Projects = () => {
 
   const handleViewDetails = () => {
     console.log("View Details button clicked");
-    try {
-      // Open the PDF file
-      const pdfUrl = "file:///C:/Users/menda/Downloads/publishing%20research%20paper/IJNRD2311374.pdf";
-      console.log("Attempting to open PDF:", pdfUrl);
-      const newWindow = window.open(pdfUrl, "_blank");
-      console.log("Window.open result:", newWindow);
-      
-      // Check if the window was blocked
-      if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-        console.error("Popup was blocked or failed to open");
-        alert("Unable to open PDF. The file path may be invalid or blocked by browser security. Please upload the PDF to a web-accessible location.");
-      }
-    } catch (error) {
-      console.error("Error opening PDF:", error);
-      alert("Error opening PDF file. Please check the console for details.");
-    }
+    // Convert Google Drive share link to direct view link
+    const pdfUrl = "https://drive.google.com/file/d/1NzV2Csi4P8YSDQYnSpvy0GRIDJI96Loe/view?usp=sharing";
+    window.open(pdfUrl, "_blank");
   };
 
   return (

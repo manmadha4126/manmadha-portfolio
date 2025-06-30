@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 
@@ -8,35 +9,43 @@ const Contact = () => {
     message: ""
   });
   const [showProfileName, setShowProfileName] = useState(false);
+  const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
     console.log("Form submitted:", formData);
   };
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+  
   const socialLinks = [{
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/manmadha-menda-1b3950244"
+    url: "https://www.linkedin.com/in/manmadha-menda-1b3950244",
+    displayName: "Manmadha Menda"
   }, {
     name: "Instagram",
     icon: Instagram,
-    url: "https://www.instagram.com/manmadha_21/"
+    url: "https://www.instagram.com/manmadha_21/",
+    displayName: "manmadha_21"
   }, {
     name: "Facebook",
     icon: Facebook,
-    url: "https://www.facebook.com/manmadhadithya.menda"
+    url: "https://www.facebook.com/manmadhadithya.menda",
+    displayName: "Manmadha M"
   }, {
     name: "Twitter",
     icon: Twitter,
-    url: "https://x.com/manmadha_21"
+    url: "https://x.com/manmadha_21",
+    displayName: "manmadha_21"
   }];
+
   return (
     <section id="contact" className="py-20 bg-slate-800/50">
       <div className="container mx-auto px-6">
@@ -95,11 +104,27 @@ const Contact = () => {
               <h4 className="text-xl font-semibold text-white mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map(social => {
-                const IconComponent = social.icon;
-                return <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group">
-                      <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
-                    </a>;
-              })}
+                  const IconComponent = social.icon;
+                  return (
+                    <div key={social.name} className="relative">
+                      <a 
+                        href={social.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer group"
+                        onMouseEnter={() => setHoveredSocial(social.name)}
+                        onMouseLeave={() => setHoveredSocial(null)}
+                      >
+                        <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                      </a>
+                      {hoveredSocial === social.name && (
+                        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-slate-800/90 text-cyan-400 px-3 py-1 rounded-lg text-sm font-medium border border-cyan-500/50 whitespace-nowrap z-10">
+                          {social.displayName}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
               
               {/* Profile Circle */}
