@@ -33,7 +33,7 @@ const Navigation = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 ml-8">
-            {["Home", "About", "Skills", "Services", "Projects", "Contact"].map(item => <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group rounded-full hover:bg-cyan-400/10 py-[6px] px-[15px] text-base">
+            {["Home", "About", "Skills", "Services", "Projects", "Contact"].map(item => <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group py-1 rounded-full hover:bg-cyan-400/10 px-[15px]">
                 {item}
                 <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-4"></span>
               </button>)}
