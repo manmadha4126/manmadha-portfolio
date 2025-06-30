@@ -34,8 +34,15 @@ const Navigation = () => {
           : "bg-slate-800/60 backdrop-blur-sm"
       } rounded-full px-6 py-3`}>
         <div className="flex justify-between items-center">
-          <div className="text-xl font-bold text-white">
-            MM<span className="text-cyan-400">.</span>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" 
+              alt="Profile" 
+              className="w-8 h-8 rounded-full object-cover border-2 border-cyan-400/30"
+            />
+            <div className="text-xl font-bold text-white">
+              MM<span className="text-cyan-400">.</span>
+            </div>
           </div>
           
           {/* Desktop Menu */}
