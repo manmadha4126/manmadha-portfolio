@@ -1,6 +1,7 @@
-
 import { useState } from "react";
 import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,11 +11,50 @@ const Contact = () => {
   });
   const [showProfileName, setShowProfileName] = useState(false);
   const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Initialize EmailJS with your public key
+  emailjs.init("3N-XWqP3WnTInz1sp");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
+
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        "427744842", // Service ID
+        "template_jk84qf7", // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        }
+      );
+
+      // Show success message
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -67,8 +107,12 @@ const Contact = () => {
               <div>
                 <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} rows={5} className="w-full bg-slate-800/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none transition-colors duration-300 resize-none" required></textarea>
               </div>
-              <button type="submit" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105">
-                Send Message
+              <button 
+                type="submit" 
+                disabled={isLoading}
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              >
+                {isLoading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
