@@ -1,0 +1,119 @@
+
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+  /Font <<
+    /F1 5 0 R
+  >>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 1200
+>>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(MANMADHARAO MENDA) Tj
+0 -30 Td
+/F1 14 Tf
+(Cybersecurity Enthusiast & DevOps Engineer) Tj
+0 -40 Td
+(Email: manmadharao.menda@example.com) Tj
+0 -20 Td
+(LinkedIn: linkedin.com/in/manmadha-menda-1b3950244) Tj
+0 -40 Td
+/F1 18 Tf
+(EDUCATION) Tj
+0 -30 Td
+/F1 12 Tf
+(B.E. Computer Science & Engineering) Tj
+0 -15 Td
+((HONS.) IBM - Information Security Specialization) Tj
+0 -15 Td
+(Chandigarh University | 2021 - 2025) Tj
+0 -25 Td
+(DevOps Engineering Program) Tj
+0 -15 Td
+(Advanced Infrastructure & Automation) Tj
+0 -15 Td
+(Scaler Academy | 2024 - 2025) Tj
+0 -40 Td
+/F1 18 Tf
+(SKILLS) Tj
+0 -30 Td
+/F1 12 Tf
+(• Cybersecurity & Information Security) Tj
+0 -15 Td
+(• DevOps & Infrastructure Management) Tj
+0 -15 Td
+(• Cloud Computing (AWS, Azure, GCP)) Tj
+0 -15 Td
+(• Container Technologies (Docker, Kubernetes)) Tj
+0 -15 Td
+(• CI/CD Pipeline Development) Tj
+0 -15 Td
+(• Infrastructure as Code (Terraform, Ansible)) Tj
+0 -15 Td
+(• Security Assessment & Penetration Testing) Tj
+0 -40 Td
+/F1 18 Tf
+(EXPERIENCE) Tj
+0 -30 Td
+/F1 12 Tf
+(Problem Solver | Innovation Driver | Security Focused | Team Leader) Tj
+0 -20 Td
+(Passionate about making information accessible, helping people solve) Tj
+0 -15 Td
+(problems, and sparking ideas in cybersecurity and DevOps domains.) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000053 00000 n 
+0000000110 00000 n 
+0000000251 00000 n 
+0000001505 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+1578
+%%EOF

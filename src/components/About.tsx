@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -10,6 +12,15 @@ const About = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/lovable-uploads/ad94cb68-317c-43e3-8fce-3f4b047af647.pdf';
+    link.download = 'Manmadharao_Menda_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="about" className="py-32 bg-slate-800/30 relative overflow-hidden">
@@ -83,15 +94,28 @@ const About = () => {
                   <Dialog>
                     <DialogTrigger asChild>
                       <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-3 rounded-full hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/30">
-                        Download CV
+                        Open CV
                       </button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-4xl w-full h-[90vh] bg-slate-900 border-slate-700">
-                      <div className="flex items-center justify-center h-full p-4">
-                        <img 
-                          src="/lovable-uploads/ad94cb68-317c-43e3-8fce-3f4b047af647.png" 
-                          alt="Manmadharao Menda CV" 
-                          className="max-h-full max-w-full object-contain rounded-lg shadow-2xl"
+                    <DialogContent className="max-w-6xl w-full h-[95vh] bg-slate-900 border-slate-700">
+                      <DialogHeader className="pb-4">
+                        <DialogTitle className="text-2xl font-bold text-cyan-400 flex items-center justify-between">
+                          Manmadharao Menda - CV
+                          <Button
+                            onClick={handleDownloadCV}
+                            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
+                            size="sm"
+                          >
+                            <Download className="w-4 h-4 mr-2" />
+                            Download PDF
+                          </Button>
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="flex-1 w-full h-full">
+                        <iframe
+                          src="/lovable-uploads/ad94cb68-317c-43e3-8fce-3f4b047af647.pdf"
+                          className="w-full h-full border-0 rounded-lg"
+                          title="Manmadharao Menda CV"
                         />
                       </div>
                     </DialogContent>
