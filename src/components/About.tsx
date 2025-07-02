@@ -1,16 +1,22 @@
+
 import { useEffect, useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return <section id="about" className="py-32 bg-slate-800/30 relative overflow-hidden">
+
+  return (
+    <section id="about" className="py-32 bg-slate-800/30 relative overflow-hidden">
       {/* Parallax Background */}
       <div className="absolute inset-0 opacity-10" style={{
-      transform: `translateY(${scrollY * 0.2}px)`
-    }}>
+        transform: `translateY(${scrollY * 0.2}px)`
+      }}>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10"></div>
       </div>
 
@@ -37,9 +43,11 @@ const About = () => {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
-                  {["Problem Solver", "Innovation Driver", "Security Focused", "Team Leader"].map(trait => <span key={trait} className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 px-4 py-2 rounded-full text-sm border border-cyan-500/30 hover:bg-cyan-500/30 transition-all duration-300">
+                  {["Problem Solver", "Innovation Driver", "Security Focused", "Team Leader"].map(trait => (
+                    <span key={trait} className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 px-4 py-2 rounded-full text-sm border border-cyan-500/30 hover:bg-cyan-500/30 transition-all duration-300">
                       {trait}
-                    </span>)}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -72,15 +80,30 @@ const About = () => {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-3 rounded-full hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/30">
-                    Download CV
-                  </button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-3 rounded-full hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/30">
+                        Download CV
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl w-full h-[90vh] bg-slate-900 border-slate-700">
+                      <div className="flex items-center justify-center h-full p-4">
+                        <img 
+                          src="/lovable-uploads/ad94cb68-317c-43e3-8fce-3f4b047af647.png" 
+                          alt="Manmadharao Menda CV" 
+                          className="max-h-full max-w-full object-contain rounded-lg shadow-2xl"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default About;
