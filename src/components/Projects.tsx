@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 const Projects = () => {
@@ -15,6 +14,10 @@ const Projects = () => {
     // Convert Google Drive share link to direct view link
     const pdfUrl = "https://drive.google.com/file/d/1NzV2Csi4P8YSDQYnSpvy0GRIDJI96Loe/view?usp=sharing";
     window.open(pdfUrl, "_blank");
+  };
+
+  const handleGithubRepository = () => {
+    window.open("https://github.com/manmadha4126/Two-Way-Authentication-Using-Raspberry-pi", "_blank");
   };
 
   return (
@@ -91,7 +94,10 @@ const Projects = () => {
                 >
                   View Details
                 </button>
-                <button className="border-2 border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-full hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105">
+                <button 
+                  onClick={handleGithubRepository}
+                  className="border-2 border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-full hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105"
+                >
                   GitHub Repository
                 </button>
               </div>
