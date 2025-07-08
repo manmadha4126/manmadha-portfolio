@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
@@ -12,7 +11,7 @@ const About = () => {
   }, []);
 
   const handleOpenCV = () => {
-    window.open('https://drive.google.com/file/d/1fx1C7YdDMx_V-EEtGfCGhsNoPWygmf4H/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1TM2aGIKcRlEtPUQ5YayuMHTxzUemPwmx/view?usp=sharing', '_blank');
   };
 
   return (
