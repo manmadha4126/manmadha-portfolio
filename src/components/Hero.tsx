@@ -58,12 +58,12 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10 max-w-6xl">
-        {/* Profile and Name Section - Side by Side Layout */}
-        <div className="flex items-center justify-center mb-12 animate-fade-in">
-          {/* Enhanced Profile Section - Left Side */}
-          <div className="mr-12 animate-fade-in">
+        {/* Profile and Name Section - Responsive Layout */}
+        <div className="flex flex-col lg:flex-row items-center justify-center mb-8 lg:mb-12 animate-fade-in">
+          {/* Enhanced Profile Section */}
+          <div className="mb-8 lg:mb-0 lg:mr-12 animate-fade-in">
             <div className="relative group">
-              <div className="w-72 h-72 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-700 cursor-pointer">
+              <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-700 cursor-pointer">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm group-hover:bg-gradient-to-r group-hover:from-slate-800/90 group-hover:to-slate-700/90 transition-all duration-700">
                   <img 
                     src="https://i.postimg.cc/QdYPRmTv/Pwe.jpg" 
@@ -79,17 +79,17 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Enhanced Typography - Right Side */}
-          <div className="text-left">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight animate-fade-in">
-              <span className="block mb-4">Hi, I'm</span>
+          {/* Enhanced Typography - Responsive */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight animate-fade-in">
+              <span className="block mb-2 lg:mb-4">Hi, I'm</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-pulse relative">
                 Manmadharao
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-500/20 blur-xl -z-10"></div>
               </span>
             </h1>
             
-            <div className="text-2xl md:text-4xl lg:text-5xl text-gray-300 font-light animate-fade-in overflow-hidden mt-6">
+            <div className="text-lg md:text-2xl lg:text-4xl xl:text-5xl text-gray-300 font-light animate-fade-in overflow-hidden mt-4 lg:mt-6">
               <div className="inline-block animate-pulse bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
                 DevOps Engineer • Security Analyst • Web Developer
               </div>
@@ -97,19 +97,19 @@ const Hero = () => {
           </div>
         </div>
         
-        <p className="text-xl md:text-2xl text-gray-400 mb-16 max-w-4xl mx-auto animate-fade-in leading-relaxed font-light">
+        <p className="text-lg md:text-xl lg:text-2xl text-gray-400 mb-12 lg:mb-16 max-w-4xl mx-auto animate-fade-in leading-relaxed font-light px-4">
           Solving problems through <span className="text-cyan-400 font-medium">secure systems</span> and <span className="text-blue-400 font-medium">scalable infrastructure</span>
         </p>
 
-        {/* Enhanced Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in">
+        {/* Enhanced Action Buttons - Responsive */}
+        <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center items-center mb-12 lg:mb-16 animate-fade-in px-4">
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/30 overflow-hidden min-w-[240px]"
+            className="group relative bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 lg:px-12 py-3 lg:py-4 rounded-full text-base lg:text-lg font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/30 overflow-hidden w-full sm:w-auto min-w-[200px] lg:min-w-[240px]"
           >
-            <span className="relative z-10 flex items-center gap-3">
+            <span className="relative z-10 flex items-center justify-center gap-3">
               Explore My Work
-              <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
+              <ArrowDown className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-y-1 transition-transform duration-300" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -117,15 +117,15 @@ const Hero = () => {
 
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative border-2 border-gray-400 text-gray-300 hover:text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-500 transform hover:scale-110 hover:border-cyan-400 overflow-hidden min-w-[240px]"
+            className="group relative border-2 border-gray-400 text-gray-300 hover:text-white px-8 lg:px-12 py-3 lg:py-4 rounded-full text-base lg:text-lg font-semibold transition-all duration-500 transform hover:scale-110 hover:border-cyan-400 overflow-hidden w-full sm:w-auto min-w-[200px] lg:min-w-[240px]"
           >
             <span className="relative z-10">Get In Touch</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </button>
         </div>
 
-        {/* Enhanced Social Links */}
-        <div className="flex justify-center space-x-8 animate-fade-in">
+        {/* Enhanced Social Links - Responsive */}
+        <div className="flex justify-center space-x-6 lg:space-x-8 animate-fade-in">
           {[
             { icon: Github, href: "#", label: "GitHub" },
             { icon: Linkedin, href: "#", label: "LinkedIn" },
@@ -134,10 +134,10 @@ const Hero = () => {
             <a
               key={label}
               href={href}
-              className="group relative p-4 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:scale-110 hover:bg-slate-700/50"
+              className="group relative p-3 lg:p-4 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:scale-110 hover:bg-slate-700/50"
               aria-label={label}
             >
-              <Icon className="w-6 h-6 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
+              <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
             </a>
           ))}
