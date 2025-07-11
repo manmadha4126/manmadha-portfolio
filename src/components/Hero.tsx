@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="relative group">
               <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-1 shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-700 cursor-pointer">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm group-hover:bg-gradient-to-r group-hover:from-slate-800/90 group-hover:to-slate-700/90 transition-all duration-700">
-                  <img alt="Manmadharao Menda" src="https://i.postimg.cc/QdYPRmTv/Pwe.jpg" className="w-full h-full group-hover:scale-110 transition-transform duration-500 object-scale-down" />
+                  <img alt="Manmadharao Menda" className="w-full h-full group-hover:scale-110 transition-transform duration-500 object-scale-down" src="https://i.postimg.cc/PJdjvcY4/Profile.jpg" />
                 </div>
               </div>
               {/* Floating Icons */}
