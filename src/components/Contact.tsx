@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+// @ts-ignore: emailjs may not have type declarations in this project
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -180,8 +180,8 @@ const Contact = () => {
                 >
                   <div className="w-full h-full rounded-full overflow-hidden bg-slate-800/90 backdrop-blur-sm">
                     <img 
-                      src="https://i.postimg.cc/bJ5F6MkX/Profile.jpg" 
-                      alt="Manmadharao Menda Profile" 
+                      src="/profile.svg"
+                      alt="Manmadharao Menda Profile"
                       className="w-full h-full hover:scale-110 transition-transform duration-300 object-cover" 
                     />
                   </div>
